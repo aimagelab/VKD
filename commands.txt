@@ -1,0 +1,90 @@
+  _______              _                 _______        _       _
+ |__   __|            | |               |__   __|      (_)     (_)
+    | | ___  __ _  ___| |__   ___ _ __     | |_ __ __ _ _ _ __  _ _ __   __ _
+    | |/ _ \/ _` |/ __| '_ \ / _ \ '__|    | | '__/ _` | | '_ \| | '_ \ / _` |
+    | |  __/ (_| | (__| | | |  __/ |       | | | | (_| | | | | | | | | | (_| |
+    |_|\___|\__,_|\___|_| |_|\___|_|       |_|_|  \__,_|_|_| |_|_|_| |_|\__, |
+                                                                         __/ |
+                                                                        |___/
+
+## VeRi Teacher Training
+python ./tools/train_v2v.py veri --backbone resnet101 --num_train_images 1 --p 18 --k 4 --exp_name base_veri_resnet101 --first_milestone 200
+python ./tools/train_v2v.py veri --backbone resnet50 --num_train_images 1 --p 18 --k 4 --exp_name base_veri_resnet50 --first_milestone 200
+python ./tools/train_v2v.py veri --backbone resnet18 --num_train_images 1 --p 18 --k 4 --exp_name base_veri_resnet18 --first_milestone 200
+python ./tools/train_v2v.py veri --backbone resnet50bam --num_train_images 1 --p 18 --k 4 --exp_name base_veri_resnet50bam --first_milestone 200
+python ./tools/train_v2v.py veri --backbone densenet121 --num_train_images 1 --p 18 --k 4 --exp_name base_veri_densenet121 --first_milestone 200
+python ./tools/train_v2v.py veri --backbone resnet34 --num_train_images 1 --p 18 --k 4 --exp_name base_veri_resnet34 --first_milestone 200
+python ./tools/train_v2v.py veri --backbone mobilenet --num_train_images 1 --p 18 --k 4 --exp_name base_veri_mobilenet --first_milestone 200
+
+## MARS Teacher Training
+python ./tools/train_v2v.py mars --backbone resnet101 --num_train_images 8 --p 8 --k 4 --exp_name base_mars_resnet101 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py mars --backbone resnet50 --num_train_images 8 --p 8 --k 4 --exp_name base_mars_resnet50 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py mars --backbone resnet18 --num_train_images 8 --p 8 --k 4 --exp_name base_mars_resnet18 --first_milestone 50
+python ./tools/train_v2v.py mars --backbone resnet50bam --num_train_images 8 --p 8 --k 4 --exp_name base_mars_resnet50bam --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py mars --backbone densenet121 --num_train_images 8 --p 8 --k 4 --exp_name base_mars_densenet121 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py mars --backbone resnet34 --num_train_images 8 --p 8 --k 4 --exp_name base_mars_resnet34 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py mars --backbone mobilenet --num_train_images 8 --p 8 --k 4 --exp_name base_mars_mobilenet --first_milestone 100 --step_milestone 100
+
+## Duke-Video-ReId Teacher Training
+python ./tools/train_v2v.py duke-video-reid --backbone resnet101 --num_train_images 8 --p 8 --k 4 --exp_name base_duke_resnet101 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py duke-video-reid --backbone resnet50 --num_train_images 8 --p 8 --k 4 --exp_name base_duke_resnet50 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py duke-video-reid --backbone resnet18 --num_train_images 8 --p 8 --k 4 --exp_name base_duke_resnet18 --first_milestone 50
+python ./tools/train_v2v.py duke-video-reid --backbone resnet50bam --num_train_images 8 --p 8 --k 4 --exp_name base_duke_resnet50bam --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py duke-video-reid --backbone densenet121 --num_train_images 8 --p 8 --k 4 --exp_name base_duke_densenet121 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py duke-video-reid --backbone resnet34 --num_train_images 8 --p 8 --k 4 --exp_name base_duke_resnet34 --first_milestone 100 --step_milestone 100
+python ./tools/train_v2v.py duke-video-reid --backbone mobilenet --num_train_images 8 --p 8 --k 4 --exp_name base_duke_mobilenet --first_milestone 100 --step_milestone 100
+
+   _____ _             _            _     _______        _       _
+  / ____| |           | |          | |   |__   __|      (_)     (_)
+ | (___ | |_ _   _  __| | ___ _ __ | |_     | |_ __ __ _ _ _ __  _ _ __   __ _
+  \___ \| __| | | |/ _` |/ _ \ '_ \| __|    | | '__/ _` | | '_ \| | '_ \ / _` |
+  ____) | |_| |_| | (_| |  __/ | | | |_     | | | | (_| | | | | | | | | | (_| |
+ |_____/ \__|\__,_|\__,_|\___|_| |_|\__|    |_|_|  \__,_|_|_| |_|_|_| |_|\__, |
+                                                                          __/ |
+                                                                         |___/
+## VeRi Student Training (self-distill)
+python ./tools/train_distill.py veri ./logs/base_veri_resnet50bam --exp_name distill_veri_resnet50bam --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_mobilenet --exp_name distill_veri_mobilenet --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet50 --exp_name distill_veri_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_densenet121 --exp_name distill_veri_densenet121 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet101 --exp_name distill_veri_resnet101 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet34 --exp_name distill_veri_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+
+## MARS Student Training (self-distill)
+python ./tools/train_distill.py mars ./logs/base_mars_resnet50bam --exp_name distill_mars_resnet50bam --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_mobilenet --exp_name distill_mars_mobilenet --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --exp_name distill_mars_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_densenet121 --exp_name distill_mars_densenet121 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet101 --exp_name distill_mars_resnet101 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet34 --exp_name distill_mars_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+
+## Duke-Video-ReId Student Training (self-distill)
+python ./tools/train_distill.py ./logs/duke-video-reid base_duke_resnet50bam --exp_name distill_duke_resnet50bam --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py ./logs/duke-video-reid base_duke_mobilenet --exp_name distill_duke_mobilenet --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py ./logs/duke-video-reid base_duke_resnet50 --exp_name distill_duke_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py ./logs/duke-video-reid base_duke_densenet121 --exp_name distill_duke_densenet121 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py ./logs/duke-video-reid base_duke_resnet101 --exp_name distill_duke_resnet101 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py ./logs/duke-video-reid base_duke_resnet34 --exp_name distill_duke_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+
+---------------------------------------------------------------------------------------------------
+
+## VeRi Student Training (cross-distill)
+python ./tools/train_distill.py veri ./logs/base_veri_resnet101 --student ./logs/base_veri_resnet34 --exp_name distill_veri_resnet101_to_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet101 --student ./logs/base_veri_resnet50bam --exp_name distill_veri_resnet101_to_resnet50bam --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet50 --student  ./logs/base_veri_resnet34 --exp_name distill_veri_resnet50_to_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet101 --student ./logs/base_veri_mobilenet --exp_name distill_veri_resnet101_to_mobilenet --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py veri ./logs/base_veri_resnet101 --student ./logs/base_veri_resnet50 --exp_name distill_veri_resnet101_to_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+
+## MARS Student Training (cross-distill)
+python ./tools/train_distill.py mars ./logs/base_mars_resnet101 --student ./logs/base_mars_resnet34 --exp_name distill_mars_resnet101_to_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet101 --student ./logs/base_mars_resnet50bam --exp_name distill_mars_resnet101_to_resnet50bam --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --student  ./logs/base_mars_resnet34 --exp_name distill_mars_resnet50_to_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet101 --student ./logs/base_mars_mobilenet --exp_name distill_mars_resnet101_to_mobilenet --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py mars ./logs/base_mars_resnet101 --student ./logs/base_mars_resnet50 --exp_name distill_mars_resnet101_to_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+
+## Duke-Video-ReId Student Training (cross-distill)
+python ./tools/train_distill.py duke-video-reid ./logs/base_duke_resnet101 --student ./logs/base_duke_resnet34 --exp_name distill_duke_resnet101_to_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py duke-video-reid ./logs/base_duke_resnet101 --student ./logs/base_duke_resnet50bam --exp_name distill_duke_resnet101_to_resnet50bam --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py duke-video-reid ./logs/base_duke_resnet50 --student  ./logs/base_duke_resnet34 --exp_name distill_duke_resnet50_to_resnet34 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py duke-video-reid ./logs/base_duke_resnet101 --student ./logs/base_duke_mobilenet --exp_name distill_duke_resnet101_to_mobilenet --p 12 --k 4 --step_milestone 150 --num_epochs 500
+python ./tools/train_distill.py duke-video-reid ./logs/base_duke_resnet101 --student ./logs/base_duke_resnet50 --exp_name distill_duke_resnet101_to_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
