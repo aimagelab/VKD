@@ -1,6 +1,6 @@
 # Robust Re-Identification by Multiple Views Knowledge Distillation
 
-## Installation Notes
+## Installation Note
 
 Tested with Python3.6.8 on Ubuntu (17.04, 18.04).
 
