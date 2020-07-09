@@ -26,12 +26,12 @@ Tested with Python3.6.8 on Ubuntu (17.04, 18.04).
 
 Please note that if you're running the code from Pycharm (or another IDE) you may need to manually set the working path to ``PROJECT_PATH``
 
-## VKD Training (MARS)
+## VKD Training (MARS [1])
 
 ### Data preparation
 - Create the folder ``./datasets/mars``
 - Download the dataset from [here](https://drive.google.com/drive/u/1/folders/0B6tjyrV1YrHeMVV2UFFXQld6X1E)
-- Unzip data and place the two folders inside the MARS folder
+- Unzip data and place the two folders inside the MARS [1] folder
 - Download metadata from [here](https://github.com/liangzheng06/MARS-evaluation/tree/master/info)
 - Place them in a folder named ``info`` under the same path
 - You should end up with the following structure:
@@ -92,4 +92,9 @@ Backbone|top1 I2V|mAP I2V|top1 V2V|mAP V2V
 Backbone|top1 I2V|mAP I2V|top1 V2V|mAP V2V
 :-:|:-:|:-:|:-:|:-:
 ``MobileNet-V2`` | 78.64 | 67.94 | 85.96 | 77.10 
-``MobileVKD-V2`` | **83.33** | **73.95** | **88.13** | **79.62** 
+``MobileVKD-V2`` | **83.33** | **73.95** | **88.13** | **79.62**
+
+## References
+
+1. Zheng, L., Bie, Z., Sun, Y., Wang, J., Su, C., Wang, S., Tian, Q.: Mars: A video benchmark for large-scale person re-identification. In: European Conference on Computer Vision (2016)
+
