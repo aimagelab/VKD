@@ -1,6 +1,6 @@
 # Robust Re-Identification by Multiple Views Knowledge Distillation
 
-This repository contains Pytorch code for the [ECCV20](https://eccv2020.eu/) paper "Robust Re-Identification by Multiple Views Knowledge Distillation".
+This repository contains Pytorch code for the [ECCV20](https://eccv2020.eu/) paper "Robust Re-Identification by Multiple Views Knowledge Distillation" [[arXiv](http://arxiv.org/abs/2007.04174)]
 
 ![VKD - Overview](images/mvd_framework.png)
 
