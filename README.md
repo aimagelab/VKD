@@ -6,10 +6,10 @@ This repository contains Pytorch code for the [ECCV20](https://eccv2020.eu/) pap
 
 ```bibtex
 @inproceedings{porrello2020robust,
-author={Porrello, Angelo and Bergamini, Luca and Calderara, Simone},
-title = {Robust Re-Identification by Multiple Views Knowledge Distillation},
-booktitle = {The European Conference on Computer Vision (ECCV)},
-year = {2020}
+    author={Porrello, Angelo and Bergamini, Luca and Calderara, Simone},
+    title = {Robust Re-Identification by Multiple Views Knowledge Distillation},
+    booktitle = {The European Conference on Computer Vision (ECCV)},
+    year = {2020}
 }
 ```
 
