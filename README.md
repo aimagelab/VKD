@@ -58,7 +58,7 @@ python ./tools/train_v2v.py mars --backbone resnet50 --num_train_images 8 --p 8 
 python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --exp_name distill_mars_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
 ```
 
-![Alt](images/mars_all_withstudent.pdf){width=100%}
+![](images/mars_all_withstudent.png)
 
 ## Model Zoo
 
