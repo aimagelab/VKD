@@ -45,7 +45,7 @@ PROJECT_PATH/datasets/mars/
 
 ### Teacher-Student Training
 
-**First step**: the backbone network is trained for the standard Video-To-Video setting. In this stage, training examples comprises N images drawn from the same tracklet (N=8 by default; you can change it through the argument ``--num_train_images``.
+**First step**: the backbone network is trained for the standard Video-To-Video setting. In this stage, each training example comprises of N images drawn from the same tracklet (N=8 by default; you can change it through the argument ``--num_train_images``.
 
 ```shell
 # To train ResNet-50 on MARS (teacher, first step) run:
