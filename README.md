@@ -43,15 +43,19 @@ PROJECT_PATH/datasets/mars/
 |-- info/
 ```
 
-### Teacher-student training
+### Teacher-Student Training
+
+**First step**: the backbone network is trained for the standard Video-To-Video setting. In this stage, training examples comprises N images drawn from the same tracklet (N=8 by default; you can change it through the argument ``--num_train_images``.
 
 ```shell
 # To train ResNet-50 on MARS (teacher, first step) run:
 python ./tools/train_v2v.py mars --backbone resnet50 --num_train_images 8 --p 8 --k 4 --exp_name base_mars_resnet50 --first_milestone 100 --step_milestone 100
+```
 
+**Second step**: we appoint it as the teacher and freeze its parameters. Then, a new network with the role of the student is instantiated. In doing so, we feed N views (i.e. images captured from multiple cameras) as input to the teacher and ask the student to mimic the same outputs from fewer (M=2 by default,``--num_student_images``) frames.
+```shell
 # To train a ResVKD-50 (student) run:
 python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --exp_name distill_mars_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
-```
 
 ## Model Zoo
 
