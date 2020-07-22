@@ -58,6 +58,8 @@ python ./tools/train_v2v.py mars --backbone resnet50 --num_train_images 8 --p 8 
 python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --exp_name distill_mars_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
 ```
 
+![](images/mars_all_withstudent.pdf)
+
 ## Model Zoo
 
 You can download from [here](https://drive.google.com/drive/folders/1EiiV4Q02dP9ASE7-zvlZdIDin3Xf6qp2?usp=sharing) a bunch of pre-trained checkpoints (``baseline.zip`` contains weights of the teacher networks, ``distilled.zip`` the student ones). To evaluate ResNet-50 and ResVKD-50 on MARS, proceed as follows:
