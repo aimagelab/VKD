@@ -56,6 +56,7 @@ python ./tools/train_v2v.py mars --backbone resnet50 --num_train_images 8 --p 8 
 ```shell
 # To train a ResVKD-50 (student) run:
 python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --exp_name distill_mars_resnet50 --p 12 --k 4 --step_milestone 150 --num_epochs 500
+```
 
 ## Model Zoo
 
