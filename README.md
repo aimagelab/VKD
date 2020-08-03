@@ -101,7 +101,19 @@ Backbone|top1 I2V|mAP I2V|top1 V2V|mAP V2V
 ``MobileNet-V2`` | 78.64 | 67.94 | 85.96 | 77.10 
 ``MobileVKD-V2`` | **83.33** | **73.95** | **88.13** | **79.62**
 
+## Teacher-Student Explanations
+
+As discussed in the main paper, we have leveraged GradCam [2] to highlight the input regions that have been considered paramount for predicting the identity. We have performed the same analysis for the teacher network as well as for the student one: as can be seen, the latter pays more attention to the subject of interest compared to its teacher.
+
+![Model Explanation](images/gradcam.png)
+
+You can draw the heatmaps with the following command:
+
+```sh
+python -u ./tools/save_heatmaps.py mars <path-to-teacher-net> --chk_net1 <teacher-checkpoint-name> <path-to-student-net> --chk_net2 <student-checkpoint-name> --dest_path <output-dir>
+```
+
 ## References
 
 1. Zheng, L., Bie, Z., Sun, Y., Wang, J., Su, C., Wang, S., Tian, Q.: Mars: A video benchmark for large-scale person re-identification. In: European Conference on Computer Vision (2016)
-
+2. Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2017). Grad-cam: Visual explanations from deep networks via gradient-based localization. In Proceedings of the IEEE international conference on computer vision (pp. 618-626).
