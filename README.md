@@ -5,11 +5,13 @@ This repository contains Pytorch code for the [ECCV20](https://eccv2020.eu/) pap
 ![VKD - Overview](images/mvd_framework.png)
 
 ```bibtex
-@inproceedings{porrello2020robust,
+@inproceedings{porrello2020robust,    
+    title={Robust Re-Identification by Multiple Views Knowledge Distillation},
     author={Porrello, Angelo and Bergamini, Luca and Calderara, Simone},
-    title = {Robust Re-Identification by Multiple Views Knowledge Distillation},
-    booktitle = {The European Conference on Computer Vision (ECCV)},
-    year = {2020}
+    booktitle={European Conference on Computer Vision},
+    pages={93--110},
+    year={2020},
+    organization={Springer}
 }
 ```
 
