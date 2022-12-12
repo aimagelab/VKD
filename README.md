@@ -65,7 +65,7 @@ python ./tools/train_distill.py mars ./logs/base_mars_resnet50 --exp_name distil
 ## Model Zoo
 
 We provide a bunch of pre-trained checkpoints through two zip files (``baseline.zip`` containing the weights of the teacher networks, ``distilled.zip`` the student ones). Therefore, to evaluate ResNet-50 and ResVKD-50 on MARS, proceed as follows:
-- Download ``baseline.zip`` from [here](https://ailb-web.ing.unimore.it/publicfiles/ECCV%202020%20-%20VKD/baseline.zip) and ``distilled.zip`` from [here](https://ailb-web.ing.unimore.it/publicfiles/ECCV%202020%20-%20VKD/distilled.zip) (~4.8 GB)
+- Download ``baseline.zip`` from [here](https://ailb-web.ing.unimore.it/publicfiles/drive/ECCV%202020%20-%20VKD/baseline.zip) and ``distilled.zip`` from [here](https://ailb-web.ing.unimore.it/publicfiles/drive/ECCV%202020%20-%20VKD/distilled.zip) (~4.8 GB)
 - Unzip the two folders inside the ``PROJECT_PATH/logs`` folder
 - Then, you can evaluate both networks using the ``eval.py`` script:
 
